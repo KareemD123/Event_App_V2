@@ -1,0 +1,30 @@
+<h1>Event app</h1>
+
+<!-- Create a form to search -->
+<!-- Inside the form, we need an input -->
+<!-- use two-way data binding with ngModel -->
+<!-- attach the submit to the searchEvent method -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Host</th>
+      <th>Location</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let event of eventList">
+      <td>{{ event.name }}</td>
+      <td>{{ event.host }}</td>
+      <td>{{ event.location }}</td>
+      <td>{{ event.date }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Create a form to create a new event -->
+<!-- Inside the form, we need a multiple inputs, one for name, host, locaiton & date -->
+<!-- use two-way data binding with ngModel for each input -->
+<!-- attach the submit to the createEvent method -->
