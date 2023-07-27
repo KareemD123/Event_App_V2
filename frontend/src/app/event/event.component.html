@@ -1,10 +1,26 @@
 <h1>Event app</h1>
 
+<mat-slide-toggle>Toggle Me!</mat-slide-toggle>
+
 <!-- Create a form to search -->
 <!-- Inside the form, we need an input -->
 <!-- use two-way data binding with ngModel -->
 <!-- attach the submit to the searchEvent method -->
 
+<!-- Update both Forms with Angular Material UI -->
+<form (ngSubmit)="searchEvent()">
+  <label for="name">Name:</label>
+  <input
+    type="text"
+    [(ngModel)]="searchParam"
+    id="name-input"
+    name="name"
+    autocomplete="off"
+  />
+  <!-- <button type="submit">Search Events</button> -->
+  <button mat-raised-button color="primary" type="submit">Search Events</button>
+</form>
+<!--  Update Table to MAngular Material UI -->
 <table>
   <thead>
     <tr>
@@ -28,3 +44,39 @@
 <!-- Inside the form, we need a multiple inputs, one for name, host, locaiton & date -->
 <!-- use two-way data binding with ngModel for each input -->
 <!-- attach the submit to the createEvent method -->
+
+<form id="new-event-form" (ngSubmit)="createEvent()">
+  <label for="name">Name:</label>
+  <input
+    type="text"
+    [(ngModel)]="event.name"
+    id="name-input"
+    name="name"
+    autocomplete="off"
+  />
+  <label for="host">Host:</label>
+  <input
+    type="text"
+    [(ngModel)]="event.host"
+    id="host-input"
+    name="host"
+    autocomplete="off"
+  />
+  <label for="date">Date:</label>
+  <input
+    type="date"
+    [(ngModel)]="event.date"
+    id="date-input"
+    name="date"
+    autocomplete="off"
+  />
+  <label for="location">Location:</label>
+  <input
+    type="text"
+    [(ngModel)]="event.location"
+    id="location-input"
+    name="location"
+    autocomplete="off"
+  />
+  <button type="submit">Create Event!</button>
+</form>

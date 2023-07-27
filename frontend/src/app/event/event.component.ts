@@ -36,8 +36,20 @@ export class EventComponent implements OnInit {
     })
   }
 
-  // searchEvent(){}
+  searchEvent() {
+    this._eventService.searchEvent(this.searchParam).subscribe(responseData => {
+      console.log('This is the response data: ', responseData)
+      this.eventList = responseData
+    })
+  }
 
-  // createEvent() {}
+  createEvent() {
+    this._eventService.createEvent(this.event).subscribe(responseData => {
+      console.log('This is our createEvent respone data: ', responseData)
+      // Try to include error handling
+      // if (responseData.status == 200) {}
+      this.getEventList()
+    })
+  }
 
 }

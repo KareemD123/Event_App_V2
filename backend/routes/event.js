@@ -12,3 +12,5 @@ router.post('/createEvent', eventController.createEvent)
 router.get('/search/:searchParam', eventController.searchEvent)
 
 module.exports = router;
+
+

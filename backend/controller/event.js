@@ -14,13 +14,14 @@ function getEventList(request, response) {
 }
 // Creating Events
 function createEvent(request, response) {
+    console.log(request.body)
     // Assume that the frontend attaches form data to the HTTP request that we can use to create a new event
     try {
         const newEvent = request.body // body property is where the form data will be on the HTTP request
         eventList.push(newEvent)
-        response.status(200).json({message: 'Successfully created event !'})
+        response.status(200).json({message: 'Successfully created event !', status: 200})
     } catch (err) {
-        response.status(400).json({message: err})
+        response.status(400).json({message: err, status: 400})
     }
 }
 // Filter/Search Events

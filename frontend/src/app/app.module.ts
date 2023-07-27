@@ -8,7 +8,10 @@ import { EventComponent } from './event/event.component';
 import { HttpClientModule } from '@angular/common/http'
 // Import Event Service
 import { EventService } from './event.service'
-
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +20,11 @@ import { EventService } from './event.service'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatButtonModule
   ],
   providers: [EventService],
   bootstrap: [AppComponent]
