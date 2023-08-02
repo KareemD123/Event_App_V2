@@ -9,6 +9,8 @@ const eventRouter = require('./routes/event')
 
 // Initializing Express App 
 const app = express() // Invoking the Express Function ---> returns an App object
+// Export our app
+module.exports = app
 
 app.use(bodyParser.json())
 app.use(cors())
